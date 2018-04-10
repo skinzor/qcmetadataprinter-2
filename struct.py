@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/bin/python
 
 with open('../camera/QCamera2/stack/common/cam_intf.h', 'r') as f:
     data = f.read()
@@ -18,7 +18,10 @@ for line in metadata:
         
         metalist.append(foo[0] + ",    pMetadata);")
 
-with open('list.txt', 'w') as f:
+with open('print_intf.h', 'w') as f:
+    f.write('void printit() {\n')
     for item in metalist:
         f.write("%s\n" % item)
+    f.write('}\n')
+
 f.closed
