@@ -11,9 +11,7 @@ To get started, you hav to make list of fields of metadata_data_t using special 
     PRINT(CAM_INTF_META_FACE_RECOG,             pMetadata);
 ```
 
-Next build it and copy get_offsets binary to /system/vendor/lib on your device where libmmcamera2_mct.so located.
-
-Run it and it will produce output like this 
+Next build it and run it under /vendor/bin/get_offsets and it will produce output like this 
 
 ```
 BLOB: CAM_INTF_META_AUTOFOCUS_DATA index=19 pointer=8784 size=56
