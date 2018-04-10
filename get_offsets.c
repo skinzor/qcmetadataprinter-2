@@ -3,6 +3,13 @@
 #include <cam_intf.h>
 
 #define CAM_LIB "libmmcamera2_mct.so"
+
+int blob_pointer = 0;
+int oss_pointer = 0;
+int blob_size = 0;
+int oss_size = 0;
+metadata_buffer_t *pMetadata=malloc(sizeof(metadata_buffer_t));
+
 #define PRINT(PARAM_ID, table_ptr)  \
 	blob_pointer = (char*)(get_pointer_of(PARAM_ID, table_ptr))-(char*)(table_ptr); \
 	oss_pointer = (char*)(POINTER_OF_META(PARAM_ID, table_ptr))-(char*)(table_ptr); \
@@ -22,7 +29,6 @@ int main() {
     void *handle;
     get_pointer_of_t get_pointer_of;
     get_size_of_t get_size_of;
-    metadata_buffer_t *pMetadata=malloc(sizeof(metadata_buffer_t));
 
     handle = dlopen(CAM_LIB, RTLD_LAZY);
     if (!handle) {
@@ -40,10 +46,6 @@ int main() {
         fprintf(stderr, "%s\n", dlerror());
         return 1;
     }
-    int blob_pointer = 0;
-    int oss_pointer = 0;
-    int blob_size = 0;
-    int oss_size = 0;
 
     printit();
 
