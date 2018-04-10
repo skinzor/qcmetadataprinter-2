@@ -7,6 +7,7 @@ LOCAL_C_INCLUDES := $(LOCAL_PATH)/../camera/QCamera2/stack/common
 LOCAL_C_INCLUDES+= $(kernel_includes)
 LOCAL_MODULE_TAGS := optional
 LOCAL_MODULE := get_offsets
+LOCAL_VENDOR_MODULE := true
 LOCAL_MODULE_CLASS := EXECUTABLES
 
 LOCAL_CFLAGS := -Wall -Werror
