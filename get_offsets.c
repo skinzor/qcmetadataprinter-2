@@ -1,6 +1,6 @@
 #include <stdlib.h>
 #include <dlfcn.h>
-#include <cam_intf.h>
+#include "cam.h"
 
 #define CAM_LIB "libmmcamera2_mct.so"
 #define PRINT(PARAM_ID, table_ptr)  \
